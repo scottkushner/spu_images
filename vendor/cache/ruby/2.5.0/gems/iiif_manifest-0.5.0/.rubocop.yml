@@ -1,0 +1,22 @@
+require: rubocop-rspec
+inherit_from: .rubocop_todo.yml
+inherit_gem:
+  bixby: bixby_default.yml
+
+AllCops:
+  DisplayCopNames: true
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Naming/MethodName:
+  Exclude:
+    - 'lib/iiif_manifest/manifest_builder/iiif_service.rb'
+    - 'lib/iiif_manifest/v3/manifest_builder/iiif_service.rb'
+
+RSpec/MultipleExpectations:
+  Enabled: false

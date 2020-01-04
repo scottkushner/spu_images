@@ -1,0 +1,13 @@
+current directory: /var/www/spu_images/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+/home/skushner/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20190401-26962-ycwbz0.rb extconf.rb
+creating Makefile
+
+current directory: /var/www/spu_images/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /var/www/spu_images/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /var/www/spu_images/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" install

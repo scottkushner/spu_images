@@ -1,0 +1,21 @@
+current directory: /var/www/spu_images/vendor/cache/ruby/2.5.0/gems/mini_racer-0.2.4/ext/mini_racer_extension
+/home/skushner/.rbenv/versions/2.5.1/bin/ruby -I /home/skushner/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191115-21065-yadj40.rb extconf.rb
+checking for -lpthread... yes
+creating Makefile
+
+current directory: /var/www/spu_images/vendor/cache/ruby/2.5.0/gems/mini_racer-0.2.4/ext/mini_racer_extension
+make "DESTDIR=" clean
+
+current directory: /var/www/spu_images/vendor/cache/ruby/2.5.0/gems/mini_racer-0.2.4/ext/mini_racer_extension
+make "DESTDIR="
+compiling mini_racer_extension.cc
+cc1plus: warning: command line option ‘-Wimplicit-int’ is valid for C/ObjC but not for C++
+cc1plus: warning: unrecognized command line option "-Wno-self-assign"
+cc1plus: warning: unrecognized command line option "-Wno-constant-logical-operand"
+cc1plus: warning: unrecognized command line option "-Wno-parentheses-equality"
+cc1plus: warning: unrecognized command line option "-Wno-tautological-compare"
+linking shared-object mini_racer_extension.so
+
+current directory: /var/www/spu_images/vendor/cache/ruby/2.5.0/gems/mini_racer-0.2.4/ext/mini_racer_extension
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 mini_racer_extension.so ./.gem.20191115-21065-1mvf03y

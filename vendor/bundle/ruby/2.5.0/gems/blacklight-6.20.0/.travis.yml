@@ -1,0 +1,53 @@
+dist: trusty
+addons:
+  chrome: stable
+language: ruby
+sudo: false
+
+notifications:
+  email: false
+
+rvm:
+  - 2.5.0
+
+matrix:
+  include:
+    - rvm: 2.5.0
+      env: "RAILS_VERSION=5.2.0"
+    - rvm: 2.4.4
+      env: "RAILS_VERSION=4.2.10"
+    - rvm: 2.2.10
+      env: "RAILS_VESION=5.0.7"
+    - rvm: 2.3.7
+      env: "RAILS_VERSION=5.1.6"
+    - rvm: jruby-9.1.17.0
+      env: "RAILS_VERSION=5.2.0 JRUBY_OPTS=\"-J-Xms512m -J-Xmx1024m\""
+  allow_failures:
+    - rvm: jruby-9.1.17.0
+    - rvm: 2.4.4
+      env: "RAILS_VERSION=4.2.10"
+    - rvm: 2.2.10
+      env: "RAILS_VESION=5.0.7"
+  fast_finish: true
+
+before_install:
+  - gem update --system
+  - gem install bundler
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+
+before_script:
+  - if [[ "${RAILS_VERSION}" =~ ^4.2.* ]]; then perl -pi -e "s/ActiveRecord::Migration\[[\d\.]+\]/ActiveRecord::Migration/" db/migrate/*; fi
+
+env:
+ - "RAILS_VERSION=5.1.1"
+
+notifications:
+  irc: "irc.freenode.org#blacklight"
+  email:
+      - blacklight-commits@googlegroups.com
+
+global_env:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - ENGINE_CART_RAILS_OPTIONS='--skip-git --skip-bundle --skip-listen --skip-spring --skip-yarn --skip-keeps --skip-action-cable --skip-coffee --skip-test'
+
+jdk: oraclejdk8

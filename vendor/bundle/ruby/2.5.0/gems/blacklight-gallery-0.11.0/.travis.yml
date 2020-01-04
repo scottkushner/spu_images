@@ -1,0 +1,20 @@
+language: ruby
+sudo: false
+
+notifications:
+  email: false
+
+rvm:
+  - 2.3.1
+  - 2.2.5
+
+notifications:
+  irc: "irc.freenode.org#blacklight"
+  email:
+      - blacklight-commits@googlegroups.com
+
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+jdk: oraclejdk8
